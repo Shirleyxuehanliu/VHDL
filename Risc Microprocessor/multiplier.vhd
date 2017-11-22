@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use ieee.std_logic_unsigned.all;
+
+entity multiplier is
+	generic
+		(  size : positive := 32  -- size of input and output
+		);
+	port
+		(
+		A, B: in std_logic_vector(size-1 downto 0);
+		R: out std_logic_vector(size-1 downto 0)
+		);
+end entity multiplier;
+
+architecture Behavioral of multiplier is
+signal temp : std_logic_vector(63 downto 0);
+begin
+
+   temp <= (A*B);         
+   r <= temp(size-1 downto 0);                                        
+
+end architecture Behavioral;
